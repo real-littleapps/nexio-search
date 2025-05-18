@@ -6,7 +6,7 @@ html, body {
 
 body {
     font-family: 'Courier New', monospace;
-    background-color: #a8d6ff;
+    background-color: rgb(168, 214, 255);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -52,9 +52,11 @@ footer {
     background-color: #ffffff00;
     padding: 10px;
     font-size: 16px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border: 2px solid #165f9a;
     border-radius: 6px;
+    box-sizing: border-box; /* aby padding nepretlačil šírku */
 }
 
 .search-form button {
