@@ -1,81 +1,86 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Courier New', monospace;
-    background-color: rgb(168, 214, 255);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
+  font-family: 'Courier New', monospace;
+  background-color: rgb(168, 214, 255);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Takto zabezpečíme, že obsah zaberie miesto a footer sa pritlačí dolu */
-body > h1,
-body > form.search-form {
-    /* Ak chceš, môžeš dať margin a zarovnanie */
-    margin-top: 20px;
-    text-align: center;
+body>h1,
+body>form.search-form {
+  /* Ak chceš, môžeš dať margin a zarovnanie */
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* Aby obsah mohol rásť a footer zostal dole */
-body > h1,
-body > form.search-form {
-    flex-shrink: 0;
+body>h1,
+body>form.search-form {
+  flex-shrink: 0;
 }
 
-body > form.search-form {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+body>form.search-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 .textstred {
-    text-align: center;
+  text-align: center;
 }
 
 /* Footer */
 footer {
-    background-color: #a8d6ff;  /* trochu tmavšia farba, lepší kontrast */
-    color: black;
-    text-align: center;
-    padding: 3px;
-    font-size: 14px;
-    margin-top: auto; /* veľmi dôležité: tlačí footer na spodok */
-    width: 100%;
+  background-color: #a8d6ff;
+  /* trochu tmavšia farba, lepší kontrast */
+  color: black;
+  text-align: center;
+  padding: 3px;
+  font-size: 14px;
+  margin-top: auto;
+  /* veľmi dôležité: tlačí footer na spodok */
+  width: 100%;
 }
 
 .search-form input[type="text"] {
-    background-color: #ffffff00;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 300px;
-    border: 2px solid #165f9a;
-    border-radius: 6px;
-    box-sizing: border-box; /* aby padding nepretlačil šírku */
+  background-color: #ffffff00;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid #165f9a;
+  border-radius: 6px;
+  box-sizing: border-box;
+  /* aby padding nepretlačil šírku */
 }
 
 .search-form button {
-    background-color: #2195f3;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  background-color: #2195f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .search-form button:hover {
-    background-color: #1976D2;
+  background-color: #1976D2;
 }
 
 .gsc-results .gsc-webResult {
-  background-color: #a8d6ff;  /* jemné modré pozadie výsledkov */
+  background-color: #a8d6ff;
+  /* jemné modré pozadie výsledkov */
   border-radius: 8px;
   margin-bottom: 15px;
   padding: 15px;
@@ -84,7 +89,8 @@ footer {
 }
 
 .gsc-results .gsc-webResult a.gs-title {
-  color: #2195f3;  /* modrý nadpis odkazu */
+  color: #2195f3;
+  /* modrý nadpis odkazu */
   font-weight: bold;
 }
 
@@ -101,4 +107,39 @@ footer {
 .gsc-results {
   max-width: 700px;
   margin: 20px auto;
+}
+
+.parent {
+  flex: 1;
+  padding-top: 5px;
+  align-content: center;
+  border: #165f9a solid 2px;
+  border-radius: 12px;
+  background-color: #2195f3;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sponzor {
+  flex: 1;
+  text-align: center;
+  border: #165f9a solid 2px;
+  border-radius: 12px;
+  background-color: #2195f3;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  flex-grow: 100;
+  flex-basis: 110;
+  align-content: top;
+}
+
+.h2center {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
