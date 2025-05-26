@@ -1,42 +1,86 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Nexio search</title>
-    <link rel="stylesheet" href="style.css">
-    <script async src="https://cse.google.com/cse.js?cx=967a9236a9c554e8f"></script>
-    <link rel="icon" href="icon.png" type="image/x-icon">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nexio search</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://real-littleapps.github.io/our-search-engine/icon.png" type="image/x-icon">
+  <script async src="https://cse.google.com/cse.js?cx=967a9236a9c554e8f"></script>
+  <style type="text/css">
+    .gsc-control-cse {
+      font-family: arial, sans-serif
+    }
+
+    .gsc-control-cse .gsc-table-result {
+      font-family: arial, sans-serif
+    }
+
+    .gsc-refinementsGradient {
+      background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+    }
+  </style>
 </head>
 
 <body>
-    <h1 class="textstred">Nexio search</h1>
+  <!-- 🟨 Hamburger menu -->
+  <div class="menu-toggle" onclick="toggleNavbar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <!-- Toto je miesto, kde sa automaticky zobrazí vyhľadávač -->
-    <form class="search-form" action="https://cse.google.com/cse" method="GET">
-        <input type="text" name="q" placeholder="Search something..." />
-        <input type="hidden" name="cx" value="967a9236a9c554e8f" />
-        <input type="hidden" name="ie" value="UTF-8" />
-        <button type="submit">🔍</button>
-    </form>
+  <!-- 🟦 Navigácia -->
+  <div id="navbar">
+    <a href="index.html">Search</a>
+    <a href="tools.html">Tools</a>
+  </div>
+  <div id="hoverzone"></div>
 
-    <h2 class="h2center">Sponzors</h2>
-    <div class="parent">
-        <div class="sponzor">
-            <h2>littleapps</h2>
-            <p>We are LittleApps – a small team with a big passion for creating tiny tools that make a difference! 🛠️💖
-            </p>
-        </div>
-        <div class="sponzor">
-            <h2>Nexio support</h2>
-            <a href="https://discord.gg/F6e7Etj6qa" target: "_blank">https://discord.gg/F6e7Etj6qa</button>
-        </div>
-        </div>
+  <h1 class="textstred">Nexio search</h1>
+
+  <form class="search-form" action="https://google.com/" method="GET">
+    <input type="text" name="q" placeholder="Search something...">
+    <input type="hidden" name="cx" value="967a9236a9c554e8f">
+    <input type="hidden" name="ie" value="UTF-8">
+    <button type="submit">🔍</button>
+  </form>
+
+  <h2 class="h2center">Sponzors</h2>
+  <div class="parent">
+    <div class="sponzor">
+      <h2>littleapps</h2>
+      <p>We are LittleApps – a small team with a big passion for creating tiny tools that make a difference! 🛠️💖</p>
     </div>
-    <footer>
-        <p>&copy littleapps - All Rights Reserved</p>
-    </footer>
+    <div class="sponzor">
+      <h2>Nexio support</h2>
+      <a href="https://discord.gg/F6e7Etj6qa" target="_blank">https://discord.gg/F6e7Etj6qa</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© littleapps - All Rights Reserved</p>
+  </footer>
+
+  <!-- 🧠 JavaScript -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    const hoverzone = document.getElementById('hoverzone');
+
+    hoverzone.addEventListener('mouseenter', () => {
+      navbar.style.top = '0';
+    });
+
+    navbar.addEventListener('mouseleave', () => {
+      navbar.style.top = '-60px';
+    });
+
+    function toggleNavbar() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>

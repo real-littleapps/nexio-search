@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Nexio coin toss</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://real-littleapps.github.io/our-search-engine/icon.png" type="image/x-icon">
+</head>
+
+<div id="navbar">
+    <a href="tools.html">← Back</a>
+</div>
+
+<div id="hoverzone"></div>
+
+<h1>Coin toss</h1>
+<div class="coin-container">
+    <div class="coin">
+        <div class="head">🪙</div>
+        <div class="tail">🦅</div>
+    </div>
+</div>
+<button id="tossBtn" class="download-button">Coin toss</button>
+<div id="result"></div>
+
+<script>const coin = document.querySelector('.coin');
+    const tossBtn = document.getElementById('tossBtn');
+    const result = document.getElementById('result');
+
+    tossBtn.addEventListener('click', () => {
+        // Náhodný výsledok 0 alebo 1
+        const toss = Math.round(Math.random());
+
+        // Náhodná rotácia (mince sa bude točiť)
+        let rotation = 3600 + (toss ? 180 : 0);
+
+        // Nastav transformáciu mince (otočenie podľa výsledku)
+        coin.style.transform = `rotateY(${rotation}deg)`;
+
+        // Po animácii zobraz výsledok
+        setTimeout(() => {
+            result.textContent = toss === 0 ? 'You get Heads!' : 'You get Tails!';
+        }, 2000); // zhoduje sa s 2s transition
+    });</script>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    const hoverzone = document.getElementById('hoverzone');
+
+    hoverzone.addEventListener('mouseenter', () => {
+        navbar.style.top = '0';
+    });
+
+    navbar.addEventListener('mouseleave', () => {
+        navbar.style.top = '-60px';
+    });
+</script>
+</html>
