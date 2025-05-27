@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nexio RNG</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://real-littleapps.github.io/our-search-engine/icon.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- 🟨 Hamburger menu -->
+  <div class="menu-toggle" onclick="toggleNavbar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- 🟦 Navigácia -->
+  <div id="navbar">
+    <a href="tools.html">← Back</a>
+  </div>
+  <div id="hoverzone"></div>
+
+  <div class="coin-container">
+    <h1>Random number generator</h1>
+
+    <div class="inputs">
+      <input type="number" id="min" placeholder="Min">
+      <input type="number" id="max" placeholder="Max">
+    </div>
+
+    <div id="number" class="coin-container">...</div>
+    <button onclick="generateRandomNumber()" class="download-button">Generate</button>
+  </div>
+
+  <script>
+    function generateRandomNumber() {
+      const min = parseInt(document.getElementById("min").value);
+      const max = parseInt(document.getElementById("max").value);
+
+      if (isNaN(min) || isNaN(max) || min > max) {
+        document.getElementById("number").textContent = "❌Error❌";
+        alert("❌Please enter valid numbers! (Min must be less than or equal to Max)");
+        return;
+      }
+
+      const number = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("number").textContent = number;
+    }
+  </script>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const hoverzone = document.getElementById('hoverzone');
+
+    hoverzone.addEventListener('mouseenter', () => {
+      navbar.style.top = '0';
+    });
+
+    navbar.addEventListener('mouseleave', () => {
+      navbar.style.top = '-60px';
+    });
+
+    function toggleNavbar() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>

@@ -364,3 +364,43 @@ body.dark-theme .gsc-results .gs-snippet {
     background-color: #1976D2;
     transform: scale(1.03);
 }
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 60px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#number {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #00c9ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #007ea7;
+}
